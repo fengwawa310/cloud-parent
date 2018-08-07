@@ -3,8 +3,13 @@ server:
 
 spring:
   application:
-    name: eureka
+    name: eureka-client
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8080/eureka/
+
+mybatis:
+  mapperLocations: classpath:cn/com/cintel/mapper/*.xml
+  typeAliasesPackage: cn.com.cintel.pojo
+  configLocation: classpath:/mybatis-config.xml
