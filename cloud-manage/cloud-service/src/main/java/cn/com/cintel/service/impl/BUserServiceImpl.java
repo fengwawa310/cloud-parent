@@ -22,7 +22,11 @@ public class BUserServiceImpl implements BUserService {
     BUserMapper bUserMapper;
 
     @Override
-    public BUser selectByPrimaryKey(String id) {
-        return bUserMapper.selectByPrimaryKey(id);
+    public String selectByPrimaryKey(String id) {
+        BUser bUser = bUserMapper.selectByPrimaryKey(id);
+        if (bUser != null){
+            return bUser.getUserName();
+        }
+        return "查无此人！";
     }
 }

@@ -10,6 +10,6 @@ import cn.com.cintel.pojo.BUser;
  */
 public interface BUserService {
 
-    BUser selectByPrimaryKey(String id);
+    String selectByPrimaryKey(String id);
 
 }

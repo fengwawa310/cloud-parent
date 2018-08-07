@@ -23,11 +23,7 @@ public class WelcomeController {
 
     @GetMapping(value = "/getUserName/{id}",produces = "application/json;charset=utf-8")
     public String getUserName(@PathVariable("id") String id){
-        BUser bUser = bUserService.selectByPrimaryKey(id);
-        if (bUser != null){
-            return bUser.getUserName();
-        }
-        return "查无此人！";
+        return bUserService.selectByPrimaryKey(id);
     }
 
 }
