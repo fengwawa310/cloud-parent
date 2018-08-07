@@ -17,6 +17,7 @@
         <module>eureka-client</module>
         <module>cloud-common</module>
         <module>cloud-manage</module>
+        <module>cloud-feign</module>
     </modules>
 
     <parent>
