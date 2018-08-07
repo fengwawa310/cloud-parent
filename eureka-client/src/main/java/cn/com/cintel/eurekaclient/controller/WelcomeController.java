@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 public class WelcomeController {
@@ -24,6 +25,11 @@ public class WelcomeController {
     @GetMapping(value = "/getUserName/{id}",produces = "application/json;charset=utf-8")
     public String getUserName(@PathVariable("id") String id){
         return bUserService.selectByPrimaryKey(id);
+    }
+
+    @PostMapping(value = "/getUser",produces = "application/json;charset=utf-8")
+    public List<BUser> getUser(@RequestBody BUser bUser){
+        return bUserService.selectByExample(bUser);
     }
 
 }

@@ -1,6 +1,9 @@
 package cn.com.cintel.service;
 
 import cn.com.cintel.pojo.BUser;
+import cn.com.cintel.pojo.BUserExample;
+
+import java.util.List;
 
 /**
  * @Auther: sky
@@ -11,5 +14,7 @@ import cn.com.cintel.pojo.BUser;
 public interface BUserService {
 
     String selectByPrimaryKey(String id);
+
+    List<BUser> selectByExample(BUser bUser);
 
 }
