@@ -30,10 +30,9 @@ public class SwaggerTestController {
     @ApiOperation(value = "更新用户信息",notes = "根据url的id和用户实体来跟新用户详细信息")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id",value = "用户ID",required = true,dataType = "String",paramType = "path"),
-            @ApiImplicitParam(name = "buser",value = "用户实体",required = true,dataType = "BUser")
+            @ApiImplicitParam(name = "bUser",value = "用户实体",required = true,dataType = "BUser")
     })
     public String updateBuser(@PathVariable(value = "id")String id,@RequestBody BUser bUser){
-        bUser.setUserName("swagger");
         bUser.setId(id);
         return bUser.getUserName();
     }
