@@ -30,7 +30,7 @@ import org.springframework.web.multipart.MultipartFile;
  *
  * @author Pierantonio Cangianiello
  */
-public class FeignSpringFormEncoder implements Encoder {
+public class FeignFileEncoder implements Encoder {
 
 
     private final List<HttpMessageConverter<?>> converters = new RestTemplate().getMessageConverters();
@@ -39,7 +39,7 @@ public class FeignSpringFormEncoder implements Encoder {
 
     public static final Charset UTF_8 = Charset.forName("UTF-8");
 
-    public FeignSpringFormEncoder() {
+    public FeignFileEncoder() {
         multipartHeaders.setContentType(MediaType.MULTIPART_FORM_DATA);
         jsonHeaders.setContentType(MediaType.APPLICATION_JSON);
     }

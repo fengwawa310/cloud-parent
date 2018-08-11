@@ -29,13 +29,7 @@ public class FastDFSController extends BaseController {
     @ApiImplicitParam(name = "file",value = "上传的文件",required = true,dataType = "MultipartFile",paramType = "path")
     public BaseResponse uploadFileToFast(@RequestPart("file")MultipartFile file){
 
-        String result = "";
-
-        if (file instanceof MultipartFile){
-            System.out.println("file是MultipartFile类型");
-            System.out.println(file.getOriginalFilename());
-            result = uploadService.uploadFile(file);
-        }
+        String result = uploadService.uploadFile(file);
 
         return ajaxSucc(result,"上传成功！","200");
     }
