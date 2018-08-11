@@ -34,6 +34,7 @@ public class WelcomeController {
 
     @ApiIgnore//使用该注解忽略这个API
     @GetMapping(value = "/getUserName/{id}",produces = "application/json;charset=utf-8")
+    @ResponseBody
     public String getUserName(@PathVariable(value = "id")String id){
         return feignService.getUserName(id);
     }

@@ -24,11 +24,13 @@
                 cache: false,
                 processData: false,
                 contentType: false,
-            }).success(function (data) {
-                alert(data);
-            }).error(function () {
-                alert("上传失败");
-            });
+                success:function (data) {
+                    alert(JSON.stringify(data));
+                },
+                error:function (e) {
+                    alert("上传失败！");
+                }
+            })
         });
     });
 </script>

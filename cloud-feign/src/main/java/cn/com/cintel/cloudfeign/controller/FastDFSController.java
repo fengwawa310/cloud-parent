@@ -1,7 +1,9 @@
 package cn.com.cintel.cloudfeign.controller;
 
 
+import cn.com.cintel.base.BaseResponse;
 import cn.com.cintel.cloudfeign.service.FastDFSService;
+import cn.com.cintel.controller.BaseController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -14,7 +16,7 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/fastdfs")
 @Api(value = "测试文件上传到FastDFS")
-public class FastDFSController {
+public class FastDFSController extends BaseController {
 
     @Resource
     FastDFSService fastDFSService;
@@ -24,7 +26,7 @@ public class FastDFSController {
     @ResponseBody
     @ApiOperation(value = "上传文件",notes = "上传单个文件到FastDFS")
     @ApiImplicitParam(name = "file",value = "上传的文件",required = true,dataType = "MultipartFile",paramType = "path")
-    public String uploadFileToFast(@RequestPart("file")MultipartFile file){
+    public BaseResponse uploadFileToFast(@RequestPart("file")MultipartFile file){
 
         String result = "";
 
@@ -34,7 +36,7 @@ public class FastDFSController {
             result = fastDFSService.uploadFileToFast(file);
         }
 
-        return result;
+        return ajaxSucc(result,"上传成功！","200");
     }
 
 }
