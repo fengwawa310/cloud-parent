@@ -36,7 +36,8 @@ public class FastDFSUtils {
         if (fileAbsolutePath==null) {
             logger.error("upload file failed,please upload again!");
         }
-        String path=FastDFSClient.getTrackerUrl()+fileAbsolutePath[0]+ "/"+fileAbsolutePath[1];
+//        String path=FastDFSClient.getTrackerUrl()+fileAbsolutePath[0]+ "/"+fileAbsolutePath[1];
+        String path=fileAbsolutePath[1];
         return path;
     }
 

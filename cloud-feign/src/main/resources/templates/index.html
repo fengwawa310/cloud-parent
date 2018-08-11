@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta  http-equiv="Content-Type" content="multipart/form-data;charset=UTF-8">
+    <meta http-equiv="Content-Type" content="multipart/form-data;charset=UTF-8">
     <script type="text/javascript" th:src="@{/cloud-feign/js/jquery-3.3.1.min.js}"></script>
     <title>Index</title>
 </head>
 <body>
     <form id="uploadForm" enctype="multipart/form-data">
-        文件:<input id="file" type="file" name="file"/>
+        <input id="file" type="file" name="file"/>
     </form>
     <button id="upload">上传文件</button>
 </body>

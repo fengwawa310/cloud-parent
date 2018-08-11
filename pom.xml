@@ -38,6 +38,7 @@
         <springfox-swagger-ui.version>2.6.1</springfox-swagger-ui.version>
         <fastdfs-client-java.version>1.27.0.0</fastdfs-client-java.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
+        <feign-form.version>2.1.0</feign-form.version>
     </properties>
 
     <dependencies>
@@ -93,6 +94,18 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j-api.version}</version>
+            </dependency>
+
+            <!--feign上传依赖jar-->
+            <dependency>
+                <groupId>io.github.openfeign.form</groupId>
+                <artifactId>feign-form</artifactId>
+                <version>${feign-form.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.openfeign.form</groupId>
+                <artifactId>feign-form-spring</artifactId>
+                <version>${feign-form.version}</version>
             </dependency>
 
 

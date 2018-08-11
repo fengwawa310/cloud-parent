@@ -47,6 +47,15 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
+        <!--feign上传依赖jar-->
+        <dependency>
+            <groupId>io.github.openfeign.form</groupId>
+            <artifactId>feign-form</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.openfeign.form</groupId>
+            <artifactId>feign-form-spring</artifactId>
+        </dependency>
     </dependencies>
 
 
