@@ -19,3 +19,7 @@ eureka:
 feign:
   hystrix:
     enabled: true
+
+sys:
+  cintel:
+    uploadUrl: http://127.0.0.1:8081
