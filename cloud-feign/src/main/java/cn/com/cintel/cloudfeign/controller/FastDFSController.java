@@ -3,6 +3,7 @@ package cn.com.cintel.cloudfeign.controller;
 
 import cn.com.cintel.base.BaseResponse;
 import cn.com.cintel.cloudfeign.service.FastDFSService;
+import cn.com.cintel.cloudfeign.service.UploadService;
 import cn.com.cintel.controller.BaseController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -19,7 +20,7 @@ import javax.annotation.Resource;
 public class FastDFSController extends BaseController {
 
     @Resource
-    FastDFSService fastDFSService;
+    UploadService uploadService;
 
     @PostMapping(value = "/uploadFileToFast",produces = {MediaType.APPLICATION_JSON_UTF8_VALUE},
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -33,7 +34,7 @@ public class FastDFSController extends BaseController {
         if (file instanceof MultipartFile){
             System.out.println("file是MultipartFile类型");
             System.out.println(file.getOriginalFilename());
-            result = fastDFSService.uploadFileToFast(file);
+            result = uploadService.uploadFile(file);
         }
 
         return ajaxSucc(result,"上传成功！","200");

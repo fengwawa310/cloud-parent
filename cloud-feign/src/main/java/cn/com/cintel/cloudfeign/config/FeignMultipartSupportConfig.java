@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 
 /**
- * 支持feign的远程文件上传
+ * 支持feign的远程文件上传 慎重配置
  */
-@Configuration
+//@Configuration
 public class FeignMultipartSupportConfig {
 
     @Bean
