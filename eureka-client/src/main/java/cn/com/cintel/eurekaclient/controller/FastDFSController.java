@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,7 +14,8 @@ public class FastDFSController {
 
     private static Logger logger = LoggerFactory.getLogger(FastDFSController.class);
 
-    @PostMapping("/uploadFileToFast") //new annotation since 4.3
+    @PostMapping(value = "/uploadFileToFast",consumes = "multipart/form-data") //new annotation since 4.3
+    @ResponseBody
     public String uploadFileToFast(@RequestParam("file") MultipartFile file) {
 
         String path = "";

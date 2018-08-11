@@ -6,6 +6,10 @@ server:
 spring:
   application:
     name: cloud-feign
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
 
 eureka:
   client:

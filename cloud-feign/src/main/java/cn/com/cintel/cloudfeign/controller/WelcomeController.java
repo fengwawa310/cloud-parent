@@ -3,7 +3,9 @@ package cn.com.cintel.cloudfeign.controller;
 import cn.com.cintel.cloudfeign.service.FeignEntityService;
 import cn.com.cintel.cloudfeign.service.FeignService;
 import cn.com.cintel.pojo.BUser;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
@@ -16,13 +18,19 @@ import java.util.List;
  * @Date: Create in 16:47 2018/8/7
  * @Modified By:
  */
-@RestController
+@Controller
 public class WelcomeController {
 
     @Resource
     FeignService feignService;
     @Resource
     FeignEntityService feignEntityService;
+
+    @RequestMapping("/")
+    @ApiIgnore
+    public String index(){
+        return "/index";
+    }
 
     @ApiIgnore//使用该注解忽略这个API
     @GetMapping(value = "/getUserName/{id}",produces = "application/json;charset=utf-8")

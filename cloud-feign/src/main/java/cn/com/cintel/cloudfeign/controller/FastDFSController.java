@@ -5,10 +5,7 @@ import cn.com.cintel.cloudfeign.service.FastDFSService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
@@ -21,11 +18,20 @@ public class FastDFSController {
     @Resource
     FastDFSService fastDFSService;
 
-    @PostMapping("/uploadFileToFast")
-    @ApiOperation(value = "上传文件",notes = "上传单个文件到FastDFS")
-    @ApiImplicitParam(name = "file",value = "上传的文件",required = true,dataType = "MultipartFile",paramType = "path")
+    @PostMapping(value = "/uploadFileToFast",consumes = "multipart/form-data")
+    @ResponseBody
+//    @ApiOperation(value = "上传文件",notes = "上传单个文件到FastDFS")
+//    @ApiImplicitParam(name = "file",value = "上传的文件",required = true,dataType = "File",paramType = "path")
     public String uploadFileToFast(@RequestParam("file")MultipartFile file){
-        return fastDFSService.uploadFileToFast(file);
+
+        String result = "";
+
+        if (file instanceof MultipartFile){
+            System.out.println("file是MultipartFile类型");
+            result = fastDFSService.uploadFileToFast(file);
+        }
+
+        return result;
     }
 
 }

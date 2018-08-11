@@ -1,7 +1,6 @@
 package cn.com.cintel.cloudfeign.service;
 
 import cn.com.cintel.cloudfeign.hystrix.FastDFSServiceHystrix;
-import cn.com.cintel.cloudfeign.hystrix.FeignEntityServiceHystrix;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
