@@ -4,6 +4,13 @@ server:
 spring:
   application:
     name: eureka-client
+  http:
+
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+
 eureka:
   client:
     service-url:
@@ -13,3 +20,4 @@ mybatis:
   mapperLocations: classpath:cn/com/cintel/mapper/*.xml
   typeAliasesPackage: cn.com.cintel.pojo
   configLocation: classpath:/mybatis-config.xml
+
