@@ -39,6 +39,7 @@
         <fastdfs-client-java.version>1.27.0.0</fastdfs-client-java.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
         <feign-form.version>2.1.0</feign-form.version>
+        <lombok.version>1.16.18</lombok.version>
     </properties>
 
     <dependencies>
@@ -106,6 +107,14 @@
                 <groupId>io.github.openfeign.form</groupId>
                 <artifactId>feign-form-spring</artifactId>
                 <version>${feign-form.version}</version>
+            </dependency>
+
+            <!-- lombok依赖jar -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
             </dependency>
 
 

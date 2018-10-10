@@ -1,10 +1,8 @@
 package cn.com.cintel.cloudfeign.controller;
 
+import cn.com.cintel.cloudfeign.pojo.Book;
 import cn.com.cintel.pojo.BUser;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -36,5 +34,14 @@ public class SwaggerTestController {
         bUser.setId(id);
         return bUser.getUserName();
     }
+
+
+    @PostMapping(value = "/swaggerEntityDescribe")
+    @ApiOperation(value = "实体类参数",notes = "json的字段中有详细说明,查看页面的Model选项")
+    @ApiImplicitParam(name = "book",value = "书本实体",required = true,dataType = "Book",paramType = "body")
+    public void swaggerEntityDescribe(@RequestBody Book book){
+        System.out.println(book.getBookName());
+    }
+
 
 }
